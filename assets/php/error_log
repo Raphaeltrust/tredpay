@@ -1,0 +1,37 @@
+[22-Jan-2022 13:42:00 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (From): your-email-address in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php:1253
+Stack trace:
+#0 /home/thenati2/public_html/tredpay.com/assets/php/action.php(43): PHPMailer\PHPMailer\PHPMailer->setFrom('your-email-addr...', 'Ventura - User ...')
+#1 {main}
+  thrown in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1253
+[22-Jan-2022 14:55:54 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (From): your-email-address in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php:1253
+Stack trace:
+#0 /home/thenati2/public_html/tredpay.com/assets/php/action.php(43): PHPMailer\PHPMailer\PHPMailer->setFrom('your-email-addr...', 'Ventura - User ...')
+#1 {main}
+  thrown in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1253
+[22-Jan-2022 19:15:38 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (From): your-email-address in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php:1253
+Stack trace:
+#0 /home/thenati2/public_html/tredpay.com/assets/php/action.php(43): PHPMailer\PHPMailer\PHPMailer->setFrom('your-email-addr...', 'Ventura - User ...')
+#1 {main}
+  thrown in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1253
+[22-Jan-2022 19:15:40 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (From): your-email-address in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php:1253
+Stack trace:
+#0 /home/thenati2/public_html/tredpay.com/assets/php/action.php(43): PHPMailer\PHPMailer\PHPMailer->setFrom('your-email-addr...', 'Ventura - User ...')
+#1 {main}
+  thrown in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1253
+[22-Jan-2022 19:16:56 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (From): your-email-address in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php:1253
+Stack trace:
+#0 /home/thenati2/public_html/tredpay.com/assets/php/action.php(43): PHPMailer\PHPMailer\PHPMailer->setFrom('your-email-addr...', 'Ventura - User ...')
+#1 {main}
+  thrown in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1253
+[22-Jan-2022 19:17:46 UTC] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: Invalid address:  (From): your-email-address in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php:1253
+Stack trace:
+#0 /home/thenati2/public_html/tredpay.com/assets/php/action.php(43): PHPMailer\PHPMailer\PHPMailer->setFrom('your-email-addr...', 'Ventura - User ...')
+#1 {main}
+  thrown in /home/thenati2/public_html/tredpay.com/assets/php/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1253
+[23-Jan-2022 19:17:41 UTC] PHP Warning:  Undefined array key "buyer" in /home/thenati2/public_html/tredpay.com/assets/php/process.php on line 39
+[23-Jan-2022 19:17:41 UTC] PHP Warning:  Undefined array key "buyer" in /home/thenati2/public_html/tredpay.com/assets/php/process.php on line 39
+[23-Jan-2022 19:32:41 UTC] PHP Warning:  Undefined array key "buyer" in /home/thenati2/public_html/tredpay.com/assets/php/process.php on line 39
+[23-Jan-2022 19:32:41 UTC] PHP Warning:  Undefined array key "buyer" in /home/thenati2/public_html/tredpay.com/assets/php/process.php on line 39
+[27-Jan-2022 09:19:00 UTC] PHP Warning:  Undefined array key "buyer" in /home/thenati2/public_html/tredpay.com/assets/php/process.php on line 39
+[27-Jan-2022 09:19:00 UTC] PHP Warning:  Undefined array key "buyer" in /home/thenati2/public_html/tredpay.com/assets/php/process.php on line 39
+[27-Jan-2022 16:25:44 UTC] PHP Warning:  Undefined array key "buyer" in /home/thenati2/public_html/tredpay.com/assets/php/process.php on line 39
