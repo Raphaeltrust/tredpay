@@ -75,8 +75,8 @@
  <a href="/<?=$profile_link;?>"><img class="rounded-circle" height="50" width="50" src="/assets/php/<?=$row['photo'];?>">
  <span class="username"><?=$row['name'].$verified_user;?></span></a> .
  <span class="time"><?=$cuser->timeInAgo($row['created_at']);?></span>
- <span class ="nav-item post-menu"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
- 
+ <a href="#" class ="nav-item post-menu postnav" data-token="<?=$row['sellerToken'];?>" data-toggle="modal" data-target="#postnav"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+</a>
  </div>
  <div class ="post-body">
  <h4><?=$row['itemName'];?></h4>
@@ -128,10 +128,53 @@ if(!isset($_GET['page']) || ($_GET['page'] == 1)){
  ?>
 
 
+<!-- Modal -->
+<div class="modal fade" id="postnav" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="postnavTitle">Seller Token</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  
+       <button id="copy-btn"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></button> <span id="userToken"></span>
+	   <input type="text" value="Copy Text value" id="myInput">
+<button onclick="copyFunc()" >Copy to clipboard</button>
+	</div>
+      
+    </div>
+  </div>
+</div>
+
+
+	</div>
+
+<!-- jQuery -->
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JS -->
+        <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <!-- Datatables JS -->
+		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="assets/plugins/datatables/datatables.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets/js/script.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+		<script src="assets/php/js/market.js"></script>
+		
 <?php
 	include('assets/php/footer.php');
 	?>
-	</div>
+	
 	<style>
 			@media screen and (min-width: 768px) {
 				.d-container {
@@ -184,5 +227,11 @@ if(!isset($_GET['page']) || ($_GET['page'] == 1)){
 	.price{
 	font-weight:bold;
 	color:red;
+	}
+	#copy-btn{
+		border:none;
+		border-radius:100%;
+		height:35px;
+		width:35px;
 	}
 	</style>
