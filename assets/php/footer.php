@@ -1,4 +1,4 @@
-<div style="height:70px;">
+<div style="height:100px;">
 </div>
 <div class="footer-nav nav">
 	<li class="nav-item">

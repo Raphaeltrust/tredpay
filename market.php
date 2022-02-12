@@ -20,13 +20,35 @@
  </div>
  </div>
  <?php
- // $sql="select * from information where First_Name like '%$search_value%'";
- if(isset($_GET["search"])){
- $query = $_GET["search"];
-  $sql = "SELECT users.id, transaction.itemName, transaction.price, transaction.itemDesc, transaction.created_at, users.name, users.email, users.badge, users.photo FROM transaction INNER JOIN users ON transaction.uid = users.id WHERE transaction.itemName LIKE '%$query%' AND  transaction.list = 1 ORDER BY transaction.created_at DESC";
+ $sql = "SELECT count(*) FROM transaction INNER JOIN users ON transaction.uid = users.id WHERE transaction.list = 1";
+ $result = $conn->query($sql);
+ if ($result->num_rows > 0) {
+ while($row = $result->fetch_assoc()) {
+ $totalResult = $row['count(*)'];
+ }
  }
  else{
- $sql = "SELECT users.id, transaction.itemName, transaction.price, transaction.itemDesc, transaction.created_at, users.name, users.email, users.badge, users.photo FROM transaction INNER JOIN users ON transaction.uid = users.id WHERE transaction.list = 1 ORDER BY transaction.created_at DESC";
+	$totalResult = 0;
+ }
+ $offset = 0;
+ $page_result = 10; 
+	 
+ if(isset($_GET['page'])){
+  $page_value = $_GET['page'];
+  if($page_value > 1)
+  {	
+   $offset = ($page_value - 1) * $page_result;
+  }
+ }
+ else{
+	$page_value = 2;
+ }
+ if(isset($_GET["search"])){
+ $query = $_GET["search"];
+  $sql = "SELECT * FROM transaction INNER JOIN users ON transaction.uid = users.id WHERE transaction.itemName LIKE '%$query%' AND  transaction.list = 1 ORDER BY transaction.created_at DESC  LIMIT  $offset, $page_result";
+ }
+ else{
+ $sql = "SELECT * FROM transaction INNER JOIN users ON transaction.uid = users.id WHERE transaction.list = 1 ORDER BY transaction.created_at DESC  LIMIT  $offset, $page_result";
  }
  $result = $conn->query($sql);
  
@@ -76,19 +98,40 @@
  </li>
  </div>
  </div>
- 
- <?php
+ <?php 
  }
  } else {
- echo "0 results";
+ echo "0 results <style>.next-btn{display:none;}</style>";
+
  }
- $conn->close();
+ ?>
+ <div class=" text-center">
+	 <?php
+	 if($totalResult > $page_result){
+ if(isset($_GET['page'])){
+ $pagecount = $totalResult; // Total number of rows
+ $num = $_GET['page']; //$pagecount / $page_result ;
+
+ 
+ if($num > 1) {
+  echo '<a href ="market?page='.($_GET['page'] - 1).'" class="btn btn-primary" style="border-radius:5px 0px 0px 5px; margin-right: 1px;"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none" opacity=".87"/><path d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"/></svg> Prev </a>';
+ }
+ if($num > 1)
+ {
+  echo '<a href ="market?page='.($_GET['page'] + 1).'" class="btn btn-primary next-btn" style="border-radius:0px 5px 5px 0px;"> Next <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg> </a>';
+ }
+}
+if(!isset($_GET['page']) || ($_GET['page'] == 1)){
+	echo '<a href = "market?page=2" class="btn btn-primary next-btn"> Next  <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></a>';
+}
+	 }
  ?>
 
 
 <?php
 	include('assets/php/footer.php');
 	?>
+	</div>
 	<style>
 			@media screen and (min-width: 768px) {
 				.d-container {
