@@ -82,7 +82,7 @@ $result = $conn->query($sql);
 								</div>
 							</div>
 							<div class="profile-nav" style="background:red !important;">
-								<ul class="nav nav-tabs nav-tabs-solid">
+								<ul class="nav nav-tabs nav-tabs-solid" id="myTab">
 									<li class="nav-item">
 										<a class="nav-link active" data-toggle="tab" href="#per_details_tab"><i class="fas fa-info-circle"></i> About</a>
 									</li>
@@ -343,6 +343,13 @@ $result = $conn->query($sql);
 		<!-- Custom JS -->
 		<script src="assets/js/script.js"></script>
 		<script src="assets/php/js/profile.js"></script>
+		<script>
+	 $("#myTab a").each(function(i){ // Loop through all the links
+    if(document.location.hash == $(this).attr("href")){ // Compare the value from the url with the id
+        $(this).tab('show'); // If equal add class active
+    }
+  });
+</script>
 		<?php
 		include('assets/php/footer.php');
 		?>

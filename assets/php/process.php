@@ -28,7 +28,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'transaction') {
 		$transactions = $cuser->get_transactions($cid);
 		if ($transactions) {
 			$output .= '<table class="datatable table table-stripped text-center">
-							<thead>
+										<thead>
 								<tr>
 									<td>Transaction ID</td>
 									<td>Name</td>

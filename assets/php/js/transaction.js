@@ -57,8 +57,9 @@ $(".confirmBtn").click(function(e){
 			});
 		}
 	});
-
-
+	$("#refreshBtn").click(function(e){
+		displayAllTrans();
+	});
 	//Edit note of an user Ajax Request
 	$("body").on("click", ".editBtn", function(e){
 		e.preventDefault();
