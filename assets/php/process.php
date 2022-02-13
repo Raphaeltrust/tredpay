@@ -52,7 +52,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'transaction') {
 			
 			if($buyer == 0){
 			$buyer = "No buyer";
-			$ttxt = "progress...";
+			$ttxt = "Active";
 			$seller_action ='<a href="#" id="'.$row['tid'].'" title="Delete Transaction" class="text-danger deleteBtn"><i class="fas fa-trash"></i></a>';
 			}
 			else{
@@ -64,7 +64,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'transaction') {
 			while($buyer_row = $result->fetch_assoc()) {
 			$buyer = '<a href="/user?id='.$row["buyer"].'">'.$buyer_row["name"].'</a>';
 			$ttxt = "Confirm";
-			$seller_action = '<a href="#" data-amount="'.$row['price'].'" data-buyer="'.$row['buyer'].'" id="'.$row['tid'].'" title="View Details" class="text-success removeBtn"><i class="fas fa-user-minus"></i></a>&nbsp;&nbsp;&nbsp;';
+			$seller_action = '<a href="#" data-amount="'.$row['price'].'" data-buyer="'.$row['buyer'].'" id="'.$row['tid'].'" title="Remove Buyer" class="text-success removeBtn"><i class="fas fa-user-minus"></i></a>&nbsp;&nbsp;&nbsp;';
 			
 			}
 			}
@@ -75,7 +75,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'transaction') {
 								<td>#TRP-'.$row['tid'].'</td>
 								<td>'.$row['itemName'].'</td>
 								<td><strong>&#8358;</strong>'.$row['price'].'</td>
-								<td>'.$row['sellerToken'].'<button class="copy-btn" data-text="very ok" style="border-radius:100%;outline:none;border:none;"><i class="far fa-copy"></i></button></td>
+								<td><button  id="copy-btn" class="copy" data-clipboard-target="#userToken'.$row["tid"].'" style="border-radius:100%;outline:none;border:none;"><i class="far fa-copy"></i></button><input type="text" class="copy-text" id="userToken'.$row["tid"].'" value="'.$row['sellerToken'].'" readonly="readonly"> 
+								</td>
 								<td>'.$buyer.'</td>
 								<td>
 								<a href="#" data-amount="'.$row['price'].'" id="'.$row['tid'].'" class="btn btn-primary confirmBtn acceptBtn '.$buyer_approve.'">'.$ttxt.'</a>

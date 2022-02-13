@@ -3,7 +3,7 @@ $(document).ready(function(){
     $("body").on("click", ".postnav", function(e){
         e.preventDefault();
         token_id = $(this).attr("data-token");
-        $("#userToken").html(token_id);
+        $("#userToken").val(token_id);
     });
    
         //Edit note of an user Ajax Request

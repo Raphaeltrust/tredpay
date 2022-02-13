@@ -3,7 +3,24 @@
  
  
  ?>
- 
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+<script>
+var clipboard = new ClipboardJS('.copy');
+
+clipboard.on('success', function(e) {
+	$("#userToken").val("Token Copied!");
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+});
+</script>
  <div class="conteunt d-container" style="padding-top: 1em;">
  <div class="container">
 	 <form method="GET" action="market">
@@ -139,10 +156,10 @@ if(!isset($_GET['page']) || ($_GET['page'] == 1)){
         </button>
       </div>
       <div class="modal-body">
-		  
-       <button id="copy-btn"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></button> <span id="userToken"></span>
-	   <input type="text" value="Copy Text value" id="myInput">
-<button onclick="copyFunc()" >Copy to clipboard</button>
+
+
+       <button id="copy-btn" class="copy" data-clipboard-target="#userToken"><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></button> <input type="text" class="copy-text" id="userToken" value="" readonly="readonly">
+
 	</div>
       
     </div>
@@ -170,18 +187,14 @@ if(!isset($_GET['page']) || ($_GET['page'] == 1)){
 		<script src="assets/js/script.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 		<script src="assets/php/js/market.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		
 <?php
 	include('assets/php/footer.php');
 	?>
 	
 	<style>
-			@media screen and (min-width: 768px) {
-				.d-container {
-					width:50%;
-					margin: 0 auto;
-}
- }
+		
 
 		}
 	.post-card a{

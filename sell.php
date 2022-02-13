@@ -1,7 +1,28 @@
 <?php require_once 'assets/php/header.php'; 
  require_once 'assets/php/functions.php';
 ?>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+<script>
+var clipboard = new ClipboardJS('.copy');
 
+clipboard.on('success', function(e) {
+	Swal.fire({
+                            title: 'Token Copied!',
+                            icon: 'success'
+                        });
+    
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+});
+</script>
 			<!-- Page Wrapper -->
                 <div class="content container" style="padding-top: 5em;">
 
