@@ -1,3 +1,4 @@
+<script src="assets/js/script.js"></script>
 <div style="height:100px;">
 </div>
 <div class="footer-nav nav">
@@ -31,17 +32,8 @@
 		</li>
 		
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.0/turbolinks.js" integrity="sha512-P3/SDm/poyPMRBbZ4chns8St8nky2t8aeG09fRjunEaKMNEDKjK3BuAstmLKqM7f6L1j0JBYcIRL4h2G6K6Lew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-			$("#menu").click(function(e){
-				e.preventDefault();
-  $(".navmenu").show(500);
-});
-$("#closemenu").click(function(e){
-	
-  $(".navmenu").hide(500);
-});
-</script>
+
+
 <style>
 .footer-nav{
 width:100%;
@@ -64,13 +56,14 @@ padding-top:5px;
 color:#000;
 }
 </style>
-<script src="https://unpkg.com/ripple-effects"></script>
-		<script>
-	/*	ripple(".card",{
-		triggerExcept: "a.btn",
-		});*/
-		const sd = ripple("button, .footer-nav .nav-item",{
-		opacity: 1,
-		background: "rgba(0,0,0,0.1)"
-		});
-		</script>
+<script>
+				$("#menu").click(function(e){
+				e.preventDefault();
+  $(".navmenu").show(500);
+});
+$("#closemenu").click(function(e){
+	
+  $(".navmenu").hide(500);
+});
+var clipboard = new ClipboardJS('.copy');
+	</script>

@@ -1,5 +1,9 @@
 $(document).ready(function(){
-	
+	$("#myTab a").each(function(i){ // Loop through all the links
+		if(document.location.hash == $(this).attr("href")){ // Compare the value from the url with the id
+			$(this).tab('show'); // If equal add class active
+		}
+	  });
 	//Profile Update Ajax Request
 	$("#profile-update-form").submit(function(e){
 		e.preventDefault();

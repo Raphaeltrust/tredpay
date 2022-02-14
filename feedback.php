@@ -31,25 +31,7 @@
 			<div class="col-sm-2"></div>			
 		</div>
 	</div>
-
-		<!-- jQuery -->
-        <script src="assets/js/jquery-3.2.1.min.js"></script>
-		
-		<!-- Bootstrap Core JS -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-		
-		<!-- Slimscroll JS -->
-        <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-        <!-- Datatables JS -->
-		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-		<script src="assets/plugins/datatables/datatables.min.js"></script>
-		
-		<!-- Custom JS -->
-		<script src="assets/js/script.js"></script>
 		<script src="assets/php/js/feedback.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 		
     </body>
 

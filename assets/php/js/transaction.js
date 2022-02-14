@@ -1,12 +1,24 @@
 $(document).ready(function(){
 //copy token
+var clipboard = new ClipboardJS('.copy');
 
-    $(".copy-btn").click(function(){
-  text = 'mumu';//$(this).attr("data-text");
-        $(text).select();
-      document.execCommand("copy"); 
-    alert("Copied On clipboard");
-    });
+clipboard.on('success', function(e) {
+	Swal.fire({
+                            title: 'Token Copied!',
+                            icon: 'success'
+                        });
+    
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+});
 
 //seller payment
 $(".confirmBtn").click(function(e){
