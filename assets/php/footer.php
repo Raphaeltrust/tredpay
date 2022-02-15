@@ -23,7 +23,7 @@
 		<br>Enter Token 
 		</a>
 		</li>
-		<li class="nav-item" id="menu">
+		<li class="nav-item menu-btn">
 		<a href="#" >
 		<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
 		
@@ -57,7 +57,7 @@ color:#000;
 }
 </style>
 <script>
-				$("#menu").click(function(e){
+				$(".menu-btn").click(function(e){
 				e.preventDefault();
   $(".navmenu").show(500);
 });
