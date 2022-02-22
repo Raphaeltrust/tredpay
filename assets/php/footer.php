@@ -65,5 +65,4 @@ $("#closemenu").click(function(e){
 	
   $(".navmenu").hide(500);
 });
-var clipboard = new ClipboardJS('.copy');
 	</script>
